@@ -25,3 +25,13 @@
 <script>
   try { localStorage.setItem("theme", "light"); } catch (e) {}
 </script>
+
+<!-- Show the profile drawing whole: no circular crop, no ring around it -->
+<style>
+  .author__avatar img {
+    border-radius: 0;
+    border: 0;
+    padding: 0;
+    background: none;
+  }
+</style>
