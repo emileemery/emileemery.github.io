@@ -20,3 +20,8 @@
 <meta name="theme-color" content="var(--global-bg-color)"/>
 
 <!-- end custom head snippets -->
+
+<!-- Light mode only: main.min.js follows the stored "theme" setting before the OS preference -->
+<script>
+  try { localStorage.setItem("theme", "light"); } catch (e) {}
+</script>
