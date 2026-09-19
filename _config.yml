@@ -23,10 +23,10 @@ repository               : "emileemery/emileemery.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.jpg"
+  avatar           : "profile.png"
   name             : "Émile Emery"
   pronouns         : # example: "she/her"  
-  bio              : "Statistical physicist of complex networks"
+  bio              : "Theoretical physicist in complex networks"
   location         : "Paris, France"
   employer         : "Université Paris Cité — LIED"
   uri              : # URL
@@ -231,7 +231,7 @@ kramdown:
 # These settings control the types of collections used by the template
 collections:
   teaching:
-    output: true
+    output: false
     permalink: /:collection/:path/
   publications:
     output: true

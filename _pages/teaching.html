@@ -5,8 +5,13 @@ permalink: /teaching/
 author_profile: true
 ---
 
-{% include base_path %}
-
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
+{% assign by_year = site.teaching | group_by_exp: "course", "course.date | date: '%Y'" | sort: "name" | reverse %}
+{% for year in by_year %}
+<h2>{{ year.name }}</h2>
+<ul>
+  {% assign courses = year.items | sort: "date" | reverse %}
+  {% for course in courses %}
+  <li><strong>{{ course.title }}</strong><br>{{ course.type }}, <i>{{ course.venue }}</i></li>
+  {% endfor %}
+</ul>
 {% endfor %}

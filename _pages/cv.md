@@ -69,9 +69,10 @@ Scientific and academic responsibilities
 
 Teaching
 ======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+{% assign courses = site.teaching | sort: "date" | reverse %}
+<ul>{% for course in courses %}
+  <li><strong>{{ course.date | date: "%Y" }}</strong> — {{ course.title }}, {{ course.type }}, <i>{{ course.venue }}</i></li>
+{% endfor %}</ul>
 
 * **2015–2024** — Private tutoring in mathematics and physics, secondary school to first-year bachelor's
 
