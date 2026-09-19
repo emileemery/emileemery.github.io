@@ -1,26 +1,17 @@
 ---
 permalink: /
-title: "About me"
+title: "Welcome"
 author_profile: true
-redirect_from: 
-  - /about/
-  - /about.html
 ---
 
-I am a postdoctoral researcher at the Paris Interdisciplinary Energy Research Institute (LIED/PIERI), Université Paris Cité / CNRS, working with José Halloy. I use statistical physics and complex network theory to study the infrastructures of the energy transition: how power grids grow, how much material they require, and how that stock scales with population across countries.
+I am a physicist working on **complex networks and the energy transition**. I am a postdoctoral researcher at the Paris Interdisciplinary Energy Research Institute (LIED/PIERI), Université Paris Cité / CNRS, where I use statistical physics to study how electricity grids grow, how much material they contain, and what it costs to build and renew them worldwide.
 
-My current project models low- and middle-voltage electricity networks at international scale, and is funded by the PEPR Recyclage programme.
+More about [my background](/about-me/), [my research](/research/) and [my publications](/publications/).
 
-Background
+Latest news
 ------
-I completed my PhD in theoretical and numerical physics in 2025 at CEA IRAMIS/SPEC (SPHYNX group, Université Paris-Saclay), supervised by Sébastien Aumaître and Hervé Bercegol, on *statistical physics and resource investments in networks for the energy transition*. Before that, I studied theoretical physics at École Normale Supérieure (ICFP Master's) and high-energy physics at École Polytechnique and ETH Zurich. During my studies I did research internships in causal set theory (Raman Research Institute, Bangalore), post-Newtonian gravitation (Institut d'Astrophysique de Paris) and image analysis for the Euclid mission (APC, Paris).
+{% for item in site.data.news limit:4 %}
+* **{{ item.date }}** — {{ item.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}
+{% endfor %}
 
-In 2026 I obtained the French national qualification for associate professor (CNU sections 28 and 29).
-
-Research interests
-------
-* Complex networks and hypergraphs, spatial network generative models
-* Power grid topology, growth and material stock
-* Energy storage placement in transmission grids
-* Resource and energy investment in long-lived infrastructures
-* Higher-order interactions in social and ecological systems
+[All news](/news/)
