@@ -23,7 +23,7 @@ repository               : "emileemery/emileemery.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.jpg"
   name             : "Émile Emery"
   pronouns         : # example: "she/her"  
   bio              : "Postdoctoral researcher in statistical physics of networks for the energy transition"
