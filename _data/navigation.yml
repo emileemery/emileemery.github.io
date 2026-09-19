@@ -11,9 +11,6 @@ main:
   - title: "Home"
     url: /
 
-  - title: "News"
-    url: /news/
-
   - title: "About me"
     url: /about-me/
 
@@ -23,11 +20,8 @@ main:
   - title: "Publications"
     url: /publications/
 
-  - title: "Press"
-    url: /press/
-
-  - title: "Beyond research"
-    url: /beyond-research/
+  - title: "Outreach"
+    url: /outreach/
 
   - title: "Data & Codes"
     url: /data/

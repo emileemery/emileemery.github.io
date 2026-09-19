@@ -1,6 +1,6 @@
 ---
-permalink: /press/
-title: "Press & outreach"
+permalink: /outreach/
+title: "Outreach"
 author_profile: true
 ---
 
@@ -12,7 +12,7 @@ Articles
 
 Outreach
 ------
-* **December 2025** — Outreach text for the *LIED Manifesto*
+* **December 2025** — Outreach text for the *LIED Manifesto*, the lab's popular-science book
 * **December 2025** — Science discovery session for Year 2 primary school pupils
 * **December 2024** — *Art & Mathématiques* conference for artists: a visual introduction to network theory and the energy transition
 * **October 2023** — Introduction to chaotic processes, *Fête de la Science*, ENS Paris-Saclay
