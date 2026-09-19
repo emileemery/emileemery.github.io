@@ -19,7 +19,9 @@ cd markdown_generator && python3 publications.py publications.csv   # -> ../_pub
 python3 markdown_generator/talks.py markdown_generator/talks.tsv   # -> _talks/*.md (default output dir)
 ```
 
-Changes to `_config.yml` are not picked up by a running `jekyll serve`; restart it. There is no test suite or linter beyond the strict Jekyll build.
+Changes to `_config.yml` are not picked up by a running `jekyll serve`; restart it. When a `jekyll serve` is running, do build checks with `-d` pointing outside the repo (e.g. `-d /tmp/site-check`): a production build into `_site/` overwrites the served pages with `https://emileemery.github.io` asset URLs and the local preview loses its CSS/JS.
+
+If `bundle install` fails for lack of `ruby-dev` (no sudo), the headers can be unpacked locally: `apt download ruby3.2-dev`, extract with `dpkg-deb -x` into `~/.local/rubydev/root`, then run bundler with `RUBYOPT=-r~/.local/rubydev/patch_rbconfig.rb` (overrides `rubyhdrdir`/`rubyarchhdrdir`) and `LIBRARY_PATH=~/.local/rubydev/lib` (symlink to `libruby-3.2.so`). Bundler itself is installed with `gem install --user-install bundler` (in `~/.local/share/gem/ruby/3.2.0/bin`). There is no test suite or linter beyond the strict Jekyll build.
 
 ## Architecture
 

@@ -11,29 +11,17 @@ main:
   - title: "Home"
     url: /
 
-  - title: "About me"
-    url: /about-me/
-
   - title: "Research Interests"
     url: /research/
 
   - title: "Publications"
     url: /publications/
 
-  - title: "Outreach"
-    url: /outreach/
-
-  - title: "Data & Codes"
+  - title: "Data & Code"
     url: /data/
-
-  - title: "Talks"
-    url: /talks/
 
   - title: "Teaching"
     url: /teaching/
 
-  - title: "CV"
-    url: /cv/
-
-  # - title: "CV"
-  #   url: /cv-json/
+  - title: "Outreach"
+    url: /outreach/

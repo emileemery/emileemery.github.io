@@ -1,6 +1,6 @@
 ---
 permalink: /data/
-title: "Data & codes"
+title: "Data & code"
 author_profile: true
 ---
 
