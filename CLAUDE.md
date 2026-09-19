@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repo is
 
-A personal academic website (to be served at `emileemery.github.io`) built from the **Academic Pages** Jekyll template (v0.9.x, itself derived from Minimal Mistakes). It is a template instance, not the upstream theme: never open PRs back to `academicpages/academicpages.github.io` (see `AGENTS.md`). Content (about, CV, talks, teaching) is derived from the LaTeX CV kept in `_inputs/cv_en.tex` (upstream: `../CV_en_fr/CV_EN/main.tex`). Personal data from the CV (phone, birth date, postal address) is deliberately not published.
+A personal academic website (to be served at `emileemery.github.io`) built from the **Academic Pages** Jekyll template (v0.9.x, itself derived from Minimal Mistakes). It is a template instance, not the upstream theme: never open PRs back to `academicpages/academicpages.github.io` (see `AGENTS.md`). Content (about, CV, talks, teaching) is derived from the CVs in `_inputs/`: `main.pdf` (most recent CV, preferred when sources disagree), `cv_en.tex` (upstream: `../CV_en_fr/CV_EN/main.tex`) and `applicationB2.pdf` (CV section of an MSCA application; do not publish anything about the proposal itself). Personal data from the CV (phone, birth date, postal address) is deliberately not published.
 
 ## Commands
 

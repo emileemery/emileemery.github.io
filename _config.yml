@@ -26,7 +26,7 @@ author:
   avatar           : "profile.jpg"
   name             : "Émile Emery"
   pronouns         : # example: "she/her"  
-  bio              : "Postdoctoral researcher in statistical physics of networks for the energy transition"
+  bio              : "Statistical physicist of complex networks"
   location         : "Paris, France"
   employer         : "Université Paris Cité — LIED"
   uri              : # URL
@@ -35,14 +35,14 @@ author:
   # Academic websites
   academia         : # URL
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : 
+  googlescholar    : "https://scholar.google.com/citations?user=G_TdzbcAAAAJ"
   inspire-hep      : # URL
   impactstory      : # URL
   orcid            : "https://orcid.org/0000-0001-5074-1163"
   semantic         : # URL
   ssrn             : # URL
   pubmed           : 
-  researchgate     : # URL
+  researchgate     : "https://www.researchgate.net/profile/Emile-Emery-2"
   scopus           : # URL
   zotero           : # URL
 

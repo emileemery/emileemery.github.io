@@ -1,5 +1,5 @@
 ---
-title: "Invited seminar, Networks & Games group"
+title: "Statistical physics and resource investments in networks for the energy transition"
 collection: talks
 type: "Invited talk"
 permalink: /talks/2024-05-01-invited-seminar-networks-games-group
