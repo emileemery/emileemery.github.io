@@ -15,6 +15,7 @@ bundle exec jekyll build --strict_front_matter   # what CI runs (JEKYLL_ENV=prod
 docker compose up                           # alternative: containerised server on :4000 (uses _config.yml,_config_docker.yml)
 npm run build:js                            # re-minify JS into assets/js/main.min.js after editing assets/js/*
 bash scripts/update_cv_json.sh              # regenerate _data/cv.json from _pages/cv.md
+bash scripts/update_cv_pdf.sh               # re-copy ../CV_en_fr/CV_EN/main.pdf to files/Emile_Emery_CV.pdf (the CV tab links to it)
 cd markdown_generator && python3 publications.py publications.csv   # -> ../_publications/*.md (must run from this dir)
 python3 markdown_generator/talks.py markdown_generator/talks.tsv   # -> _talks/*.md (default output dir)
 ```
