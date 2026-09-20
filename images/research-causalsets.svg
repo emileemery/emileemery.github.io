@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="A causal set inside a causal diamond">
   <g fill="none" stroke="#1a1a1a" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M50.0,7.0 L91.0,50.0 L50.0,93.0 L9.0,50.0Z" fill="#f2f2f2" stroke="none"/>
     <path d="M50.0,7.0 L91.0,50.0 L50.0,93.0 L9.0,50.0Z" stroke-width="0.75"/>
     <path d="M50.0,84.0 Q42.0,77.0 35.0,69.0"/>
     <path d="M50.0,84.0 Q57.0,75.9 63.0,67.0"/>

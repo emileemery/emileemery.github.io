@@ -1,38 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Networks stacked on three layers">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="A meshed network above a branching one">
   <g fill="none" stroke="#1a1a1a" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M16.0,24.0 L22.0,15.0 L84.0,15.0 L78.0,24.0Z" stroke-width="0.75"/>
-    <path d="M16.0,57.0 L22.0,48.0 L84.0,48.0 L78.0,57.0Z" stroke-width="0.75"/>
-    <path d="M16.0,90.0 L22.0,81.0 L84.0,81.0 L78.0,90.0Z" stroke-width="0.75"/>
-    <path d="M30.0,24.0 Q42.3,19.8 55.0,17.0"/>
-    <path d="M55.0,17.0 Q61.7,20.1 68.0,24.0"/>
-    <path d="M30.0,24.0 Q49.0,25.9 68.0,24.0"/>
-    <path d="M25.0,57.0 Q37.3,54.5 49.0,50.0"/>
-    <path d="M49.0,50.0 Q53.2,53.9 58.0,57.0"/>
-    <path d="M58.0,57.0 Q68.8,54.3 79.0,50.0"/>
-    <path d="M22.0,90.0 Q30.9,87.3 39.0,83.0"/>
-    <path d="M39.0,83.0 Q42.1,86.8 46.0,90.0"/>
-    <path d="M46.0,90.0 Q54.9,87.3 63.0,83.0"/>
-    <path d="M63.0,83.0 Q66.2,86.8 70.0,90.0"/>
-    <path d="M70.0,90.0 Q77.8,87.2 85.0,83.0"/>
-    <path d="M30.0,24.0 Q26.8,40.4 25.0,57.0"/>
-    <path d="M55.0,17.0 Q51.3,33.4 49.0,50.0"/>
-    <path d="M68.0,24.0 Q73.0,37.2 79.0,50.0"/>
-    <path d="M25.0,57.0 Q22.8,73.4 22.0,90.0"/>
-    <path d="M49.0,50.0 Q46.7,69.9 46.0,90.0"/>
-    <path d="M58.0,57.0 Q60.0,70.1 63.0,83.0"/>
-    <path d="M79.0,50.0 Q81.3,66.6 85.0,83.0"/>
+    <path d="M16.0,33.0 L22.0,21.0 L84.0,21.0 L78.0,33.0Z" stroke-width="0.75"/>
+    <path d="M16.0,87.0 L22.0,72.0 L84.0,72.0 L78.0,87.0Z" stroke-width="0.75"/>
+    <path d="M22.0,33.0 Q30.6,27.3 40.0,23.0"/>
+    <path d="M40.0,23.0 Q50.0,24.0 60.0,23.0"/>
+    <path d="M60.0,23.0 Q68.9,27.3 77.0,33.0"/>
+    <path d="M77.0,33.0 Q63.0,31.6 49.0,33.0"/>
+    <path d="M49.0,33.0 Q35.5,34.1 22.0,33.0"/>
+    <path d="M40.0,23.0 Q44.0,28.4 49.0,33.0"/>
+    <path d="M22.0,33.0 Q30.6,56.4 41.0,79.0"/>
+    <path d="M49.0,33.0 Q50.7,52.6 54.0,72.0"/>
+    <path d="M77.0,33.0 Q71.6,55.8 68.0,79.0"/>
+    <path d="M54.0,72.0 Q47.7,75.9 41.0,79.0"/>
+    <path d="M54.0,72.0 Q60.8,75.9 68.0,79.0"/>
+    <path d="M41.0,79.0 Q35.7,83.3 30.0,87.0"/>
+    <path d="M41.0,79.0 Q43.8,83.2 47.0,87.0"/>
+    <path d="M68.0,79.0 Q63.7,83.3 59.0,87.0"/>
+    <path d="M68.0,79.0 Q72.8,83.3 78.0,87.0"/>
   </g>
-  <circle cx="30.0" cy="24.0" r="2.3" fill="#1a1a1a"/>
-  <circle cx="55.0" cy="17.0" r="2.3" fill="#1a1a1a"/>
-  <circle cx="68.0" cy="24.0" r="2.3" fill="#1a1a1a"/>
-  <circle cx="25.0" cy="57.0" r="2.0" fill="#1a1a1a"/>
-  <circle cx="49.0" cy="50.0" r="2.0" fill="#1a1a1a"/>
-  <circle cx="58.0" cy="57.0" r="2.0" fill="#1a1a1a"/>
-  <circle cx="79.0" cy="50.0" r="2.0" fill="#1a1a1a"/>
-  <circle cx="22.0" cy="90.0" r="1.7" fill="#1a1a1a"/>
-  <circle cx="39.0" cy="83.0" r="1.7" fill="#1a1a1a"/>
-  <circle cx="46.0" cy="90.0" r="1.7" fill="#1a1a1a"/>
-  <circle cx="63.0" cy="83.0" r="1.7" fill="#1a1a1a"/>
-  <circle cx="70.0" cy="90.0" r="1.7" fill="#1a1a1a"/>
-  <circle cx="85.0" cy="83.0" r="1.7" fill="#1a1a1a"/>
+  <circle cx="22.0" cy="33.0" r="2.3" fill="#1a1a1a"/>
+  <circle cx="40.0" cy="23.0" r="2.3" fill="#1a1a1a"/>
+  <circle cx="60.0" cy="23.0" r="2.3" fill="#1a1a1a"/>
+  <circle cx="77.0" cy="33.0" r="2.3" fill="#1a1a1a"/>
+  <circle cx="49.0" cy="33.0" r="2.3" fill="#1a1a1a"/>
+  <circle cx="54.0" cy="72.0" r="2.0" fill="#1a1a1a"/>
+  <circle cx="41.0" cy="79.0" r="2.0" fill="#1a1a1a"/>
+  <circle cx="68.0" cy="79.0" r="2.0" fill="#1a1a1a"/>
+  <circle cx="30.0" cy="87.0" r="1.7" fill="#1a1a1a"/>
+  <circle cx="47.0" cy="87.0" r="1.7" fill="#1a1a1a"/>
+  <circle cx="59.0" cy="87.0" r="1.7" fill="#1a1a1a"/>
+  <circle cx="78.0" cy="87.0" r="1.7" fill="#1a1a1a"/>
 </svg>

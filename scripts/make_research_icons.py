@@ -39,12 +39,18 @@ def dots(pts, r=2.0):
                      for x, y in pts)
 
 
-def write(name, title, strokes, nodes, stroke=1.1):
-    body = head(title, stroke) + '\n'.join(strokes) + '\n  </g>\n' + nodes + '\n</svg>\n'
+def write(name, title, strokes, nodes, stroke=1.1, wash=None):
+    fill = ''
+    if wash:                              # a barely tinted background shape
+        pts, colour = wash
+        d = 'M' + ' L'.join(f'{x:.1f},{y:.1f}' for x, y in pts) + 'Z'
+        fill = f'    <path d="{d}" fill="{colour}" stroke="none"/>\n'
+    body = (head(title, stroke) + fill + '\n'.join(strokes)
+            + '\n  </g>\n' + nodes + '\n</svg>\n')
     open(OUT + name, 'w').write(body)
 
 
-# --- 1. infrastructure: one network per plane, the planes stacked ------------
+# --- 1. infrastructure: a meshed network feeding a branching one -----------
 
 def plane(cy, half_w=34, depth=9, shear=6):
     """A plane seen edge-on, as a shallow parallelogram."""
@@ -52,34 +58,27 @@ def plane(cy, half_w=34, depth=9, shear=6):
             (50 + half_w, cy - depth), (50 + half_w - shear, cy)]
 
 
-def on_plane(cy, x, front):
-    """Place a node on the plane: front row on its lower edge, back row higher."""
-    return (x + (0 if front else 5), cy - (0 if front else 7))
+mesh = [(22, 33), (40, 23), (60, 23), (77, 33), (49, 33)]
+mesh_edges = [(0, 1), (1, 2), (2, 3), (3, 4), (4, 0), (1, 4)]
+root = (54, 72)
+forks = [(41, 79), (68, 79)]
+leaves = [(30, 87), (47, 87), (59, 87), (78, 87)]
+tree_edges = [(root, forks[0]), (root, forks[1]),
+              (forks[0], leaves[0]), (forks[0], leaves[1]),
+              (forks[1], leaves[2]), (forks[1], leaves[3])]
 
+strokes = [polyline(plane(33, depth=12), width=0.75),
+           polyline(plane(87, depth=15), width=0.75)]
+for i, (a, b) in enumerate(mesh_edges):
+    strokes.append(link(mesh[a], mesh[b], 0.05 if i % 2 else -0.04))
+for a, b in ((mesh[0], forks[0]), (mesh[4], root), (mesh[3], forks[1])):
+    strokes.append(link(a, b, 0.02))      # the meshed layer feeds the tree
+for i, (a, b) in enumerate(tree_edges):
+    strokes.append(link(a, b, 0.03 if i % 2 else -0.03))
 
-planes, strokes, nodes = [24, 57, 90], [], []
-for cy in planes:
-    strokes.append(polyline(plane(cy), width=0.75))
-
-top = [on_plane(24, 30, True), on_plane(24, 50, False), on_plane(24, 68, True)]
-mid = [on_plane(57, 25, True), on_plane(57, 44, False), on_plane(57, 58, True),
-       on_plane(57, 74, False)]
-low = [on_plane(90, 22, True), on_plane(90, 34, False), on_plane(90, 46, True),
-       on_plane(90, 58, False), on_plane(90, 70, True), on_plane(90, 80, False)]
-
-for a, b in ((0, 1), (1, 2), (0, 2)):
-    strokes.append(link(top[a], top[b], 0.05 if (a, b) == (0, 2) else -0.03))
-for a, b in ((0, 1), (1, 2), (2, 3)):
-    strokes.append(link(mid[a], mid[b], 0.04))
-for a, b in ((0, 1), (1, 2), (2, 3), (3, 4), (4, 5)):
-    strokes.append(link(low[a], low[b], 0.05))
-for a, b in ((top[0], mid[0]), (top[1], mid[1]), (top[2], mid[3])):
-    strokes.append(link(a, b, 0.02))
-for a, b in ((mid[0], low[0]), (mid[1], low[2]), (mid[2], low[3]), (mid[3], low[5])):
-    strokes.append(link(a, b, 0.02))
-
-nodes = dots(top, 2.3) + '\n' + dots(mid, 2.0) + '\n' + dots(low, 1.7)
-write('research-infrastructure.svg', 'Networks stacked on three layers', strokes, nodes)
+nodes = dots(mesh, 2.3) + '\n' + dots([root] + forks, 2.0) + '\n' + dots(leaves, 1.7)
+write('research-infrastructure.svg', 'A meshed network above a branching one',
+      strokes, nodes)
 
 # --- 2. populations: individuals held together by group interactions ---------
 
@@ -122,6 +121,6 @@ strokes = [polyline(cone, width=0.75)]
 strokes += [link(elements[a], elements[b], 0.03 if i % 2 else -0.03)
             for i, (a, b) in enumerate(order)]
 write('research-causalsets.svg', 'A causal set inside a causal diamond',
-      strokes, dots(elements, 2.0))
+      strokes, dots(elements, 2.0), wash=(cone, '#f2f2f2'))
 
 print('wrote the three research icons')
