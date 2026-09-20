@@ -15,7 +15,7 @@ bundle exec jekyll build --strict_front_matter   # what CI runs (JEKYLL_ENV=prod
 docker compose up                           # alternative: containerised server on :4000 (uses _config.yml,_config_docker.yml)
 npm run build:js                            # re-minify JS into assets/js/main.min.js after editing assets/js/*
 bash scripts/update_cv_json.sh              # regenerate _data/cv.json from _pages/cv.md
-bash scripts/update_cv_pdf.sh               # re-copy ../CV_en_fr/CV_EN/main.pdf to files/Emile_Emery_CV.pdf (the CV tab links to it)
+bash scripts/update_cv_pdf.sh               # re-copy ../CV_en_fr/{CV_EN,CV_FR}/main.pdf to files/ (the sidebar links to both)
 cd markdown_generator && python3 publications.py publications.csv   # -> ../_publications/*.md (must run from this dir)
 python3 markdown_generator/talks.py markdown_generator/talks.tsv   # -> _talks/*.md (default output dir)
 ```
@@ -32,6 +32,7 @@ If `bundle install` fails for lack of `ruby-dev` (no sudo), the headers can be u
 - **CV** has two variants: `_pages/cv.md` (hand-written Markdown, linked in the nav) and `_pages/cv-json.md` rendered through `_includes/cv-template.html` from `_data/cv.json`. Only one should be enabled in `_data/navigation.yml`; `cv.json` is generated from `cv.md` by `scripts/`.
 - **Talk map**: `talkmap.py`/`talkmap.ipynb` geocode `location:` fields of `_talks/` into `talkmap/`; the `scrape_talks.yml` workflow runs it automatically and commits the result on pushes touching `_talks/`. Shown only if `talkmap_link: true`.
 - **Styling/JS**: `_sass/` (themes in `_sass/theme/`, selected via `site_theme`) compiled through `assets/css/main.scss`. JS sources `assets/js/_main.js`, `theme.js`, `plugins/` are excluded from the build; only the minified `assets/js/main.min.js` is served, so it must be rebuilt with npm after JS edits.
+- **Sidebar CV links**: `author.cv_en`/`author.cv_fr` in `_config.yml` drive two download links at the top of the sidebar list, added to `_includes/author-profile.html` (one of the few deliberate theme edits, together with the removed theme toggle in `_includes/masthead.html`).
 - **Layout customisation hooks**: `_includes/head/custom.html` and `_includes/footer/custom.html` are the intended places for extra `<head>` scripts (e.g. MathJax) or footer content.
 
 ## CI notes

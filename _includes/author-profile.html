@@ -23,6 +23,14 @@
   <div class="author__urls-wrapper">
     <button class="btn btn--inverse">Follow</button>
     <ul class="author__urls social-icons">
+      <!-- CV downloads -->
+      {% if author.cv_en %}
+        <li><a href="{{ author.cv_en | prepend: base_path }}"><i class="fas fa-fw fa-file-pdf icon-pad-right" aria-hidden="true"></i>CV (English)</a></li>
+      {% endif %}
+      {% if author.cv_fr %}
+        <li><a href="{{ author.cv_fr | prepend: base_path }}"><i class="fas fa-fw fa-file-pdf icon-pad-right" aria-hidden="true"></i>CV (français)</a></li>
+      {% endif %}
+
       <!-- Font Awesome icons / Biographic information  -->
       {% if author.location %}
         <li class="author__desktop"><i class="fas fa-fw fa-location-dot icon-pad-right" aria-hidden="true"></i>{{ author.location }}</li>

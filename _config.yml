@@ -24,6 +24,8 @@ repository               : "emileemery/emileemery.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
+  cv_en            : "/files/Emile_Emery_CV_EN.pdf"
+  cv_fr            : "/files/Emile_Emery_CV_FR.pdf"
   name             : "Emile Emery"
   pronouns         : # example: "she/her"  
   bio              : "Theoretical physicist in complex networks"
