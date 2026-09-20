@@ -88,12 +88,13 @@ leaves = ('a1', 'a3', 'b1', 'c1', 'c2')
 
 strokes = [polyline(plane(TOP, TOP_D), width=0.75),
            polyline(plane(LOW, LOW_D), width=0.75)]
-for i, (a, b) in enumerate(mesh_edges):
-    strokes.append(link(mesh[a], mesh[b], 0.05 if i % 2 else -0.04))
-for a, b in ((mesh[0], tree['a']), (mesh[4], tree['root']), (mesh[3], tree['b'])):
-    strokes.append(link(a, b, 0.02))      # the meshed layer feeds the branching one
-for i, (a, b) in enumerate(tree_edges):
-    strokes.append(link(tree[a], tree[b], 0.04 if i % 2 else -0.04))
+for a, b in mesh_edges:                   # straight lines: this drawing is built
+    strokes.append(link(mesh[a], mesh[b], 0))          # of planes, not of curves
+for a, b in ((mesh[0], tree['a']), (mesh[4], tree['a2']),
+             (mesh[2], tree['root']), (mesh[3], tree['b'])):
+    strokes.append(link(a, b, 0))         # the meshed layer feeds the branching one
+for a, b in tree_edges:
+    strokes.append(link(tree[a], tree[b], 0))
 
 nodes = (dots(mesh, 2.3) + '\n'
          + dots([tree[k] for k in tree if k not in leaves], 2.0) + '\n'
