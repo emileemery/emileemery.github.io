@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repo is
 
-A personal academic website (to be served at `emileemery.github.io`) built from the **Academic Pages** Jekyll template (v0.9.x, itself derived from Minimal Mistakes). It is a template instance, not the upstream theme: never open PRs back to `academicpages/academicpages.github.io` (see `AGENTS.md`). Content (about, CV, talks, teaching, publications) is derived from the CVs in `files/Emile_Emery_CV_EN.pdf` and `files/Emile_Emery_CV_FR.pdf`, copied from `../CV_en_fr/{CV_EN,CV_FR}/main.pdf` by `scripts/update_cv_pdf.sh`; `_inputs/` holds whatever source material the author drops in (never published). Personal data from the CV (phone, birth date, postal address) is deliberately not published.
+A personal academic website (to be served at `emileemery.github.io`) built from the **Academic Pages** Jekyll template (v0.9.x, itself derived from Minimal Mistakes). It is a template instance, not the upstream theme: never open PRs back to `academicpages/academicpages.github.io` (see `AGENTS.md`). Content (about, CV, talks, teaching, publications) is derived from the CVs in `files/Emile_Emery_CV_EN.pdf` and `files/Emile_Emery_CV_FR.pdf`, which `scripts/update_cv_pdf.sh` recompiles from the LaTeX sources in `../CV_en_fr/{CV_EN,CV_FR}` after stripping the postal address and the phone number from the header (the PDFs of the source folder are never copied as such); `_inputs/` holds whatever source material the author drops in (never published). Personal data from the CV (phone, birth date, postal address) is deliberately not published.
 
 ## Commands
 
@@ -15,7 +15,7 @@ bundle exec jekyll build --strict_front_matter   # what CI runs (JEKYLL_ENV=prod
 docker compose up                           # alternative: containerised server on :4000 (uses _config.yml,_config_docker.yml)
 npm run build:js                            # re-minify JS into assets/js/main.min.js after editing assets/js/*
 bash scripts/update_cv_json.sh              # regenerate _data/cv.json from _pages/cv.md
-bash scripts/update_cv_pdf.sh               # re-copy ../CV_en_fr/{CV_EN,CV_FR}/main.pdf to files/ (the sidebar links to both)
+bash scripts/update_cv_pdf.sh               # rebuild files/Emile_Emery_CV_{EN,FR}.pdf from ../CV_en_fr, minus address and phone
 python3 scripts/make_favicon.py                  # regenerate images/favicon.* from the tree in images/profile.png (run from the repo root)
 python3 scripts/make_research_icons.py           # regenerate the three ink drawings of _pages/research.html
 cd markdown_generator && python3 publications.py publications.csv   # -> ../_publications/*.md (must run from this dir)
