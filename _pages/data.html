@@ -5,7 +5,7 @@ permalink: /data/
 author_profile: true
 ---
 
-<p>The code and data behind my articles are deposited on open repositories. Each entry below links to the deposit for the corresponding paper.</p>
+<p>The code and data behind my articles are deposited on Zenodo, and the link to the deposit is given in the paper itself. The same links are gathered here, by year.</p>
 
 {% assign has_field = site.publications | where_exp: "paper", "paper.codeurl" %}
 {% assign with_code = has_field | where_exp: "paper", "paper.codeurl != ''" %}
