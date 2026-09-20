@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emileemery.github.io/sitemap.xml

@@ -12,7 +12,7 @@ site_theme               : "default" # The available themes options are "default
 title                    : "Emile Emery"
 title_separator          : "-"
 name                     : &name "Emile Emery"
-description              : &description "Emile Emery — statistical physics of networks for the energy transition"   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : &description "Emile Emery, postdoctoral researcher in the statistical physics of complex networks: power grids, spatial networks and the energy transition"   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://emileemery.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -149,10 +149,13 @@ og_image                 :  # Social media default site image
 og_description           :  # Social media default site image description
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
-social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
+# The Person entity of the site is written out in _includes/head/custom.html,
+# on the home page only; leaving site.social unset keeps the theme from
+# emitting a second, emptier one on every page.
+# social:
+#   type                   : # Person or Organization (defaults to Person)
+#   name                   : # If the user or organization name differs from the site's name
+#   links: # An array of links to social media profiles
 
 
 # Analytics

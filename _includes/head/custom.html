@@ -44,3 +44,34 @@
     padding: 0;
   }
 </style>
+
+<!-- Indexing: pages opt out with "noindex: true" in their front matter -->
+{% if page.noindex %}
+  <meta name="robots" content="noindex, follow">
+{% endif %}
+<meta name="author" content="{{ site.author.name }}">
+<meta property="og:image" content="{{ '/images/profile.png' | absolute_url }}">
+<meta name="twitter:card" content="summary">
+
+<!-- One Person entity for the whole site, on its home page -->
+{% if page.url == '/' %}
+{% capture profile_urls %}{% if site.author.googlescholar %}{{ site.author.googlescholar }},{% endif %}{% if site.author.orcid %}{{ site.author.orcid }},{% endif %}{% if site.author.researchgate %}{{ site.author.researchgate }},{% endif %}{% if site.author.bluesky %}https://bsky.app/profile/{{ site.author.bluesky }},{% endif %}{% if site.author.linkedin %}https://www.linkedin.com/in/{{ site.author.linkedin }}{% endif %}{% endcapture %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": {{ site.author.name | jsonify }},
+  "url": {{ '/' | absolute_url | jsonify }},
+  "image": {{ '/images/profile.png' | absolute_url | jsonify }},
+  "jobTitle": "Postdoctoral researcher",
+  "description": {{ site.description | jsonify }},
+  "affiliation": {
+    "@type": "Organization",
+    "name": {{ site.author.employer | jsonify }}
+  },
+  "knowsAbout": ["complex networks", "statistical physics", "power grids",
+    "energy transition", "generative network models", "causal set theory"],
+  "sameAs": {{ profile_urls | split: "," | jsonify }}
+}
+</script>
+{% endif %}

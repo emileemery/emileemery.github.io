@@ -3,6 +3,7 @@ layout: archive
 title: "Sitemap"
 permalink: /sitemap/
 author_profile: true
+description: "Every page of Emile Emery's site, in one list."
 ---
 
 {% include base_path %}

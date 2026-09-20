@@ -5,6 +5,7 @@ permalink: /cv/
 author_profile: true
 redirect_from:
   - /resume
+description: "Curriculum vitae of Emile Emery: positions, education, publications, teaching, talks and skills."
 ---
 
 {% include base_path %}

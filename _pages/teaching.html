@@ -3,6 +3,7 @@ layout: archive
 title: "Teaching"
 permalink: /teaching/
 author_profile: true
+description: "Tutorials taught by Emile Emery at Université Paris Cité and CentraleSupélec, listed by year."
 ---
 
 {% assign by_year = site.teaching | group_by_exp: "course", "course.date | date: '%Y'" | sort: "name" | reverse %}

@@ -2,6 +2,7 @@
 permalink: /outreach/
 title: "Outreach"
 author_profile: true
+description: "Popular science writing by Emile Emery, on particle physics and cosmology."
 ---
 
 Articles
