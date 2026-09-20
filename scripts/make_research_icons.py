@@ -52,31 +52,52 @@ def write(name, title, strokes, nodes, stroke=1.1, wash=None):
 
 # --- 1. infrastructure: a meshed network feeding a branching one -----------
 
-def plane(cy, half_w=34, depth=9, shear=6):
-    """A plane seen edge-on, as a shallow parallelogram."""
-    return [(50 - half_w, cy), (50 - half_w + shear, cy - depth),
-            (50 + half_w, cy - depth), (50 + half_w - shear, cy)]
+PLANE_W, PLANE_SHEAR = 46, 12
 
 
-mesh = [(22, 33), (40, 23), (60, 23), (77, 33), (49, 33)]
+def plane(cy, depth):
+    """A plane seen edge-on, as a wide parallelogram."""
+    return [(50 - PLANE_W, cy), (50 - PLANE_W + PLANE_SHEAR, cy - depth),
+            (50 + PLANE_W, cy - depth), (50 + PLANE_W - PLANE_SHEAR, cy)]
+
+
+def on(cy, depth, u, v, margin=0.07):
+    """A point at (u, v) in the plane's own frame, kept clear of its edges."""
+    assert margin <= u <= 1 - margin and margin <= v <= 1 - margin, (u, v)
+    return (50 - PLANE_W + (2 * PLANE_W - PLANE_SHEAR) * u + PLANE_SHEAR * v,
+            cy - depth * v)
+
+
+TOP, TOP_D = 36, 28
+LOW, LOW_D = 96, 32
+
+mesh = [on(TOP, TOP_D, u, v) for u, v in
+        ((0.14, 0.24), (0.33, 0.74), (0.63, 0.80), (0.86, 0.38), (0.49, 0.18))]
 mesh_edges = [(0, 1), (1, 2), (2, 3), (3, 4), (4, 0), (1, 4)]
-root = (54, 72)
-forks = [(41, 79), (68, 79)]
-leaves = [(30, 87), (47, 87), (59, 87), (78, 87)]
-tree_edges = [(root, forks[0]), (root, forks[1]),
-              (forks[0], leaves[0]), (forks[0], leaves[1]),
-              (forks[1], leaves[2]), (forks[1], leaves[3])]
 
-strokes = [polyline(plane(33, depth=12), width=0.75),
-           polyline(plane(87, depth=15), width=0.75)]
+# the lower network branches out in every direction over its own plane
+tree_uv = {
+    'root': (0.50, 0.78), 'a': (0.28, 0.66), 'b': (0.67, 0.71), 'c': (0.57, 0.47),
+    'a1': (0.13, 0.75), 'a2': (0.25, 0.41), 'a3': (0.10, 0.27),
+    'b1': (0.88, 0.57), 'c1': (0.39, 0.17), 'c2': (0.76, 0.24),
+}
+tree = {k: on(LOW, LOW_D, *uv) for k, uv in tree_uv.items()}
+tree_edges = [('root', 'a'), ('root', 'b'), ('root', 'c'), ('a', 'a1'),
+              ('a', 'a2'), ('a2', 'a3'), ('b', 'b1'), ('c', 'c1'), ('c', 'c2')]
+leaves = ('a1', 'a3', 'b1', 'c1', 'c2')
+
+strokes = [polyline(plane(TOP, TOP_D), width=0.75),
+           polyline(plane(LOW, LOW_D), width=0.75)]
 for i, (a, b) in enumerate(mesh_edges):
     strokes.append(link(mesh[a], mesh[b], 0.05 if i % 2 else -0.04))
-for a, b in ((mesh[0], forks[0]), (mesh[4], root), (mesh[3], forks[1])):
-    strokes.append(link(a, b, 0.02))      # the meshed layer feeds the tree
+for a, b in ((mesh[0], tree['a']), (mesh[4], tree['root']), (mesh[3], tree['b'])):
+    strokes.append(link(a, b, 0.02))      # the meshed layer feeds the branching one
 for i, (a, b) in enumerate(tree_edges):
-    strokes.append(link(a, b, 0.03 if i % 2 else -0.03))
+    strokes.append(link(tree[a], tree[b], 0.04 if i % 2 else -0.04))
 
-nodes = dots(mesh, 2.3) + '\n' + dots([root] + forks, 2.0) + '\n' + dots(leaves, 1.7)
+nodes = (dots(mesh, 2.3) + '\n'
+         + dots([tree[k] for k in tree if k not in leaves], 2.0) + '\n'
+         + dots([tree[k] for k in leaves], 1.7))
 write('research-infrastructure.svg', 'A meshed network above a branching one',
       strokes, nodes)
 
