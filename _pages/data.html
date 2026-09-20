@@ -1,0 +1,25 @@
+---
+layout: archive
+title: "Data & code"
+permalink: /data/
+author_profile: true
+---
+
+<p>The code and data behind my articles are deposited on open repositories. Each entry below links to the deposit for the corresponding paper.</p>
+
+{% assign has_field = site.publications | where_exp: "paper", "paper.codeurl" %}
+{% assign with_code = has_field | where_exp: "paper", "paper.codeurl != ''" %}
+{% if with_code.size > 0 %}
+  {% assign by_year = with_code | group_by_exp: "paper", "paper.date | date: '%Y'" | sort: "name" | reverse %}
+  {% for year in by_year %}
+<h2>{{ year.name }}</h2>
+<ul>
+    {% assign papers = year.items | sort: "date" | reverse %}
+    {% for paper in papers %}
+  <li><strong>{{ paper.title }}</strong><br><i>{{ paper.venue }}</i> — <a href="{{ paper.codeurl }}">code and data</a></li>
+    {% endfor %}
+</ul>
+  {% endfor %}
+{% else %}
+<p>Deposit links are being collected and will appear here shortly. In the meantime, please <a href="mailto:{{ site.author.email }}">write to me</a> for the code or data behind any paper.</p>
+{% endif %}
