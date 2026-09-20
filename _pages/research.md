@@ -16,7 +16,7 @@ I modelled a full national transmission grid, the French one, from operator data
 Can simple rules reproduce the structure of a real grid? A sequential growth model with rural–urban differentiation, connecting to nearest neighbours in rural areas and by preferential attachment in cities, reproduces both the topology of the French transmission grid and its Joule losses. More generally, most spatial generative models assume that nodes are distributed uniformly; I am replacing this assumption with a self-similar distribution and testing it on urban, road, electrical and biological networks.
 
 ### Scaling laws and material stocks
-Population density predicts network properties that the data do not record. Scaling laws calibrated on France predict grid length and material stock in 35 electrified countries, yielding national resource inventories. I am also deriving the scaling exponents of hierarchical distribution networks from first principles rather than fitting them, and confirming them on the French electricity and gas grids.
+Population density predicts network properties that the data do not record. Scaling laws calibrated on France predict grid length and material stock in 35 electrified countries, yielding national resource inventories. I am also deriving the scaling exponents of multilevel distribution networks from first principles rather than fitting them, and confirming them on the French electricity and gas grids.
 
 ### Material metabolism of energy grids
 Grids lock copper and aluminium into long-lived stocks, and require continuous renewal flows to keep standing. I follow these stocks and flows for worldwide grids up to 2100, under several population scenarios.
