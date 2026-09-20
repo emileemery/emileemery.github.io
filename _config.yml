@@ -92,6 +92,8 @@ publication_category:
     title: 'Submitted and under revision'
   preprints:
     title: 'Preprints'
+  inpreparation:
+    title: 'Manuscripts in preparation'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
