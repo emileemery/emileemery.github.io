@@ -17,6 +17,7 @@ npm run build:js                            # re-minify JS into assets/js/main.m
 bash scripts/update_cv_json.sh              # regenerate _data/cv.json from _pages/cv.md
 bash scripts/update_cv_pdf.sh               # re-copy ../CV_en_fr/{CV_EN,CV_FR}/main.pdf to files/ (the sidebar links to both)
 python3 scripts/make_favicon.py                  # regenerate images/favicon.* from the tree in images/profile.png (run from the repo root)
+python3 scripts/make_research_icons.py           # regenerate the three ink drawings of _pages/research.html
 cd markdown_generator && python3 publications.py publications.csv   # -> ../_publications/*.md (must run from this dir)
 python3 markdown_generator/talks.py markdown_generator/talks.tsv   # -> _talks/*.md (default output dir)
 ```

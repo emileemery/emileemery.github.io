@@ -1,0 +1,51 @@
+---
+permalink: /research/
+title: "Research interests"
+author_profile: true
+---
+
+{% include base_path %}
+
+<style>
+  .research-areas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    margin-top: 2em;
+    text-align: center;
+  }
+  .research-areas img {
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    margin: 0 auto 1em;
+  }
+  .page__content .research-areas h2 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 1em;
+    line-height: 1.4;
+  }
+  @media (max-width: 640px) {
+    .research-areas {
+      grid-template-columns: 1fr;
+      gap: 2.5em;
+    }
+  }
+</style>
+
+<div class="research-areas">
+  <div>
+    <img src="{{ base_path }}/images/research-infrastructure.svg" alt="A layered infrastructure network">
+    <h2>Infrastructure network modelling for societal transition</h2>
+  </div>
+  <div>
+    <img src="{{ base_path }}/images/research-populations.svg" alt="Individuals bound by group interactions">
+    <h2>Dynamics of interacting populations</h2>
+  </div>
+  <div>
+    <img src="{{ base_path }}/images/research-causalsets.svg" alt="A causal set inside a causal diamond">
+    <h2>Causal set quantum gravity</h2>
+  </div>
+</div>
