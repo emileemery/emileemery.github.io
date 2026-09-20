@@ -1,10 +1,10 @@
 {
   "basics": {
-    "name": "\u00c9mile Emery",
-    "email": "emile.emery@etik.com",
+    "name": "Émile Emery",
+    "email": "emile dot emery at etik dot com",
     "phone": "",
     "website": "https://emileemery.github.io",
-    "summary": "Currently employed at Universit\u00e9 Paris Cit\u00e9 \u2014 LIED. Postdoctoral researcher in statistical physics of networks for the energy transition",
+    "summary": "Currently employed at Université Paris Cité — LIED. Postdoctoral researcher in statistical physics of networks for the energy transition",
     "location": {
       "address": "",
       "postalCode": "",
@@ -35,14 +35,14 @@
   "presentations": [
     {
       "name": "Young Physicists' Meeting",
-      "event": "Young Physicists' Meeting, Coll\u00e8ge de France",
+      "event": "Young Physicists' Meeting, Collège de France",
       "date": "2022-11-01",
       "location": "Paris, France",
       "description": ""
     },
     {
       "name": "3rd MOMENTOM International Congress",
-      "event": "3rd MOMENTOM International Congress, Universit\u00e9 Paris-Saclay",
+      "event": "3rd MOMENTOM International Congress, Université Paris-Saclay",
       "date": "2023-03-01",
       "location": "Paris-Saclay, France",
       "description": ""
@@ -51,7 +51,7 @@
       "name": "Exergy Economics Workshop",
       "event": "Exergy Economics Workshop",
       "date": "2023-07-01",
-      "location": "Chamb\u00e9ry, France",
+      "location": "Chambéry, France",
       "description": ""
     },
     {
@@ -62,8 +62,8 @@
       "description": ""
     },
     {
-      "name": "Journ\u00e9e Syst\u00e8mes et Mati\u00e8res Complexes",
-      "event": "Journ\u00e9e Syst\u00e8mes et Mati\u00e8res Complexes, LPS",
+      "name": "Journée Systèmes et Matières Complexes",
+      "event": "Journée Systèmes et Matières Complexes, LPS",
       "date": "2023-10-01",
       "location": "Orsay, France",
       "description": ""
@@ -76,15 +76,15 @@
       "description": ""
     },
     {
-      "name": "Doctoral school \u201c\u00c9nergie & Recherche\u201d",
-      "event": "Doctoral school \u201c\u00c9nergie & Recherche\u201d",
+      "name": "Doctoral school “Énergie & Recherche”",
+      "event": "Doctoral school “Énergie & Recherche”",
       "date": "2024-03-01",
       "location": "Roscoff, France",
       "description": ""
     },
     {
       "name": "Invited seminar, Networks & Games group",
-      "event": "Networks & Games research group, Centre d'\u00c9conomie de la Sorbonne",
+      "event": "Networks & Games research group, Centre d'Économie de la Sorbonne",
       "date": "2024-05-01",
       "location": "Paris, France",
       "description": ""
@@ -98,7 +98,7 @@
     },
     {
       "name": "4th MOMENTOM International Congress",
-      "event": "4th MOMENTOM International Congress, Universit\u00e9 Paris-Saclay",
+      "event": "4th MOMENTOM International Congress, Université Paris-Saclay",
       "date": "2025-04-01",
       "location": "Paris-Saclay, France",
       "description": ""
@@ -126,7 +126,7 @@
     },
     {
       "name": "Invited seminar, LIED",
-      "event": "LIED, Universit\u00e9 Paris Cit\u00e9",
+      "event": "LIED, Université Paris Cité",
       "date": "2026-01-01",
       "location": "Paris, France",
       "description": ""
@@ -146,8 +146,8 @@
       "description": ""
     },
     {
-      "name": "Journ\u00e9es fran\u00e7aises des Syst\u00e8mes Complexes",
-      "event": "Journ\u00e9es fran\u00e7aises des Syst\u00e8mes Complexes",
+      "name": "Journées françaises des Systèmes Complexes",
+      "event": "Journées françaises des Systèmes Complexes",
       "date": "2026-06-01",
       "location": "Lyon, France",
       "description": ""
@@ -156,28 +156,28 @@
   "teaching": [
     {
       "course": "Optics",
-      "institution": "Universit\u00e9 Paris Cit\u00e9",
+      "institution": "Université Paris Cité",
       "date": "2024-10-01",
       "role": "Tutorials, BSc Biomedical Sciences",
       "description": ""
     },
     {
       "course": "Quantum and Statistical Physics (2024)",
-      "institution": "CentraleSup\u00e9lec",
+      "institution": "CentraleSupélec",
       "date": "2024-03-01",
       "role": "Tutorials, 1st-year engineering (BSc Year 3)",
       "description": ""
     },
     {
       "course": "General Physics",
-      "institution": "Universit\u00e9 Paris Cit\u00e9",
+      "institution": "Université Paris Cité",
       "date": "2024-12-01",
       "role": "Tutorials, BSc Mathematics & Computer Science",
       "description": ""
     },
     {
       "course": "Quantum and Statistical Physics (2025)",
-      "institution": "CentraleSup\u00e9lec",
+      "institution": "CentraleSupélec",
       "date": "2025-03-01",
       "role": "Tutorials, 1st-year engineering (BSc Year 3)",
       "description": ""

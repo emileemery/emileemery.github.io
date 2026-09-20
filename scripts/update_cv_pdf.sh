@@ -2,7 +2,8 @@
 # Rebuild the CVs published on the site from the LaTeX sources.
 #
 # The site is public and the source folder is not, so the published PDFs are
-# recompiled without the postal address and the phone number of the header;
+# recompiled without the postal address and the phone number of the header, and
+# with the email address written out rather than linked;
 # everything else is left as written. The sidebar links to
 # files/Emile_Emery_CV_EN.pdf and files/Emile_Emery_CV_FR.pdf, which have to
 # live in the repository for GitHub Pages to serve them.
@@ -49,11 +50,18 @@ for line in head.split('\n'):
     kept.append(line)
 head = '\n'.join(kept)
 
+# the address is written out, so that no scraper picks it up from the PDF
+def spell_out(match):
+    address = match.group(1)
+    return address.replace('@', ' at ').replace('.', ' dot ')
+
+head, spelled = re.subn(r'\\href\{mailto:([^}]+)\}\{[^}]*\}', spell_out, head)
+
 # a line ending in \\ right before the end of a block would leave a blank line
 head = re.sub(r'\\\\\s*\n(\s*\\end\{minipage\})', r'\n\1', head)
 
 open(path, 'w', encoding='utf-8').write(head + body)
-print(f'  redacted {removed} contact line(s)')
+print(f'  redacted {removed} contact line(s), spelled out {spelled} address(es)')
 PY
 
   (cd "$WORK/$dir" && for _ in 1 2; do

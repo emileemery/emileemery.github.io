@@ -32,7 +32,8 @@ author:
   location         : "Paris, France"
   employer         : "Université Paris Cité — LIED"
   uri              : # URL
-  email            : "emile.emery@etik.com" 
+  email            :        # left empty on purpose: see email_text
+  email_text       : "emile dot emery at etik dot com"   # written out, never a mailto link, to keep address scrapers out
 
   # Academic websites
   academia         : # URL

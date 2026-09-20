@@ -88,9 +88,9 @@ def extract_author_info(config):
         if author.get('name'):
             author_info['name'] = author.get('name')
         
-        # Add email
-        if author.get('email'):
-            author_info['email'] = author.get('email')
+        # Add email, written out rather than as an address (see _config.yml)
+        if author.get('email_text') or author.get('email'):
+            author_info['email'] = author.get('email_text') or author.get('email')
         
         # Add location
         if author.get('location'):
