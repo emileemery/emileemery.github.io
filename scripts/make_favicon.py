@@ -5,14 +5,15 @@ from PIL import Image
 SRC = 'images/profile.png'
 OUT = 'images/'
 
-# --- binary mask, cropped to the ink with a small margin, padded to a square
+# --- binary mask, cropped to the ink, centred in a square whose inscribed
+#     circle (the white disc of the icon) contains the whole drawing
 a = np.array(Image.open(SRC).convert('L'))
 ink = a < 128
 ys, xs = np.where(ink)
 x0, x1, y0, y1 = xs.min(), xs.max() + 1, ys.min(), ys.max() + 1
 crop = ink[y0:y1, x0:x1]
 h, w = crop.shape
-side = int(max(h, w) * 1.06)          # ~3% margin on the long side
+side = int(np.hypot(h, w) * 1.04)     # diagonal fits the disc, plus a margin
 sq = np.zeros((side, side), bool)
 oy, ox = (side - h) // 2, (side - w) // 2
 sq[oy:oy + h, ox:ox + w] = crop
@@ -81,9 +82,11 @@ def svg(mask, size):
         d = 'M' + ' '.join(f'{x * size / s:.1f},{y * size / s:.1f}' for x, y in pts) + 'Z'
         paths.append(d)
     body = '\n  '.join(f'<path d="{d}"/>' for d in paths)
+    r = size / 2
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {size} {size}">\n'
-            f'  <style>path{{fill:#1a1a1a;fill-rule:evenodd}}'
-            f'@media(prefers-color-scheme:dark){{path{{fill:#f2f2f2}}}}</style>\n'
+            f'  <style>path{{fill:#1a1a1a;fill-rule:evenodd}}</style>\n'
+            f'  <rect width="{size}" height="{size}" fill="#ffffff"/>\n'
+            f'  <circle cx="{r}" cy="{r}" r="{r}" fill="#ffffff"/>\n'
             f'  {body}\n</svg>\n')
 
 open(OUT + 'favicon.svg', 'w').write(svg(sq, 64))
@@ -130,18 +133,18 @@ def png(size, grow, dots=True, gain=1.0):
     alpha = (big.point(lambda v: 255 - v)
                 .resize((size, size), Image.LANCZOS)
                 .point(lambda v: min(255, int(v * gain))))
-    img = Image.new('RGBA', (size, size), (26, 26, 26, 0))
-    img.putalpha(alpha)
+    img = Image.new('RGBA', (size, size), (255, 255, 255, 255))
+    img.paste(Image.new('RGBA', (size, size), (26, 26, 26, 255)), (0, 0), alpha)
     return img
 
 png(512, 0).save(OUT + 'favicon-512x512.png')
 png(192, 2).save(OUT + 'favicon-192x192.png')
 png(180, 2).save(OUT + 'apple-touch-icon-180x180.png')
-png(32, 8).save(OUT + 'favicon-32x32.png')
+png(32, 7, True, 1.1).save(OUT + 'favicon-32x32.png')
 import subprocess, tempfile, os
 tmp = tempfile.mkdtemp()
 frames = []
-for size, grow, dots, gain in ((48, 5, True, 1.0), (32, 8, True, 1.0), (16, 10, False, 1.8)):
+for size, grow, dots, gain in ((48, 4, True, 1.0), (32, 7, True, 1.1), (16, 8, False, 1.4)):
     f = os.path.join(tmp, f'{size}.png')
     png(size, grow, dots, gain).save(f)
     frames.append(f)
