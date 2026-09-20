@@ -77,7 +77,7 @@ mesh_edges = [(0, 1), (1, 2), (2, 3), (3, 4), (4, 0), (1, 4)]
 
 # the lower network branches out in every direction over its own plane
 tree_uv = {
-    'root': (0.50, 0.78), 'a': (0.28, 0.66), 'b': (0.67, 0.71), 'c': (0.57, 0.47),
+    'root': (0.45, 0.80), 'a': (0.28, 0.66), 'b': (0.67, 0.71), 'c': (0.62, 0.46),
     'a1': (0.13, 0.75), 'a2': (0.25, 0.41), 'a3': (0.10, 0.27),
     'b1': (0.88, 0.57), 'c1': (0.39, 0.17), 'c2': (0.76, 0.24),
 }
@@ -90,7 +90,7 @@ strokes = [polyline(plane(TOP, TOP_D), width=0.75),
            polyline(plane(LOW, LOW_D), width=0.75)]
 for a, b in mesh_edges:                   # straight lines: this drawing is built
     strokes.append(link(mesh[a], mesh[b], 0))          # of planes, not of curves
-for a, b in ((mesh[0], tree['a']), (mesh[4], tree['a2']),
+for a, b in ((mesh[0], tree['a']), (mesh[4], tree['c']),
              (mesh[2], tree['root']), (mesh[3], tree['b'])):
     strokes.append(link(a, b, 0))         # the meshed layer feeds the branching one
 for a, b in tree_edges:
