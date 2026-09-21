@@ -14,6 +14,11 @@ description: "Peer-reviewed articles, manuscripts under revision and preprints b
     border: 0;
     font-size: 1.1em;
   }
+
+  /* plain text, so no link-like underline when the mouse passes over a paper */
+  .page__content .archive__item:hover .archive__item-title {
+    text-decoration: none;
+  }
 </style>
 
 {% if site.author.googlescholar %}
