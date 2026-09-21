@@ -7,16 +7,9 @@ description: "Peer-reviewed articles, manuscripts under revision and preprints b
 ---
 
 <style>
-  /* the papers sit under the section headings, so their titles read smaller */
-  .page__content .archive__item-title {
-    margin: 0 0 0.25em;
-    padding: 0;
-    border: 0;
-    font-size: 1.1em;
-  }
-
-  /* plain text, so no link-like underline when the mouse passes over a paper */
-  .page__content .archive__item:hover .archive__item-title {
+  /* the titles are plain text since they stopped being links, so the archive
+     hover underline only made them look clickable */
+  .archive .archive__item:hover .archive__item-title {
     text-decoration: none;
   }
 </style>
