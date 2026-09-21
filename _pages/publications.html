@@ -6,6 +6,16 @@ author_profile: true
 description: "Peer-reviewed articles, manuscripts under revision and preprints by Emile Emery on power grids, spatial networks, ecological and social interactions."
 ---
 
+<style>
+  /* the papers sit under the section headings, so their titles read smaller */
+  .page__content .archive__item-title {
+    margin: 0 0 0.25em;
+    padding: 0;
+    border: 0;
+    font-size: 1.1em;
+  }
+</style>
+
 {% if site.author.googlescholar %}
   <div class="wordwrap">You can also find my articles on <a href="{{ site.author.googlescholar }}">my Google Scholar profile</a>.</div>
 {% endif %}
@@ -17,7 +27,7 @@ description: "Peer-reviewed articles, manuscripts under revision and preprints b
     {% for paper in papers %}
 <div class="list__item">
   <article class="archive__item">
-    <h2 class="archive__item-title">{{ paper.title }}</h2>
+    <h3 class="archive__item-title">{{ paper.title }}</h3>
     <p><i>{{ paper.venue }}</i>, {{ paper.date | date: "%Y" }}</p>
       {% if paper.excerpt %}
     <p class="archive__item-excerpt">{{ paper.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}</p>
