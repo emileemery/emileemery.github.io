@@ -34,7 +34,7 @@ If `bundle install` fails for lack of `ruby-dev` (no sudo), the headers can be u
 - **CV** has two variants: `_pages/cv.md` (hand-written Markdown, linked in the nav) and `_pages/cv-json.md` rendered through `_includes/cv-template.html` from `_data/cv.json`. Only one should be enabled in `_data/navigation.yml`; `cv.json` is generated from `cv.md` by `scripts/`.
 - **Talk map**: `talkmap.py`/`talkmap.ipynb` geocode `location:` fields of `_talks/` into `talkmap/`; the `scrape_talks.yml` workflow runs it automatically and commits the result on pushes touching `_talks/`. Shown only if `talkmap_link: true`.
 - **Styling/JS**: `_sass/` (themes in `_sass/theme/`, selected via `site_theme`) compiled through `assets/css/main.scss`. JS sources `assets/js/_main.js`, `theme.js`, `plugins/` are excluded from the build; only the minified `assets/js/main.min.js` is served, so it must be rebuilt with npm after JS edits.
-- **Sidebar CV links**: `author.cv_en`/`author.cv_fr` in `_config.yml` drive two download links at the top of the sidebar list, added to `_includes/author-profile.html` (one of the few deliberate theme edits, together with the removed theme toggle in `_includes/masthead.html`).
+- **Sidebar CV links**: `author.cv_en`/`author.cv_fr` in `_config.yml` drive two download links at the top of the sidebar list, added to `_includes/author-profile.html` (one of the few deliberate theme edits, together with the removed theme toggle in `_includes/masthead.html` and, in the same file, the `children:` support that turns the `CV` entry of `_data/navigation.yml` into a dropdown).
 - **SEO**: every page carries a `description:` in its front matter (the fallback is `description` in `_config.yml`); `_includes/head/custom.html` adds the author and Open Graph image tags, honours `noindex: true` in a page's front matter, and emits the site's single `Person` JSON-LD (job title, affiliation, `sameAs` built from the `author:` profile links) on the home page only — `site.social` is left commented out in `_config.yml` so the theme does not emit a second, emptier one. `robots.txt` at the root points to the sitemap that `jekyll-sitemap` generates. The template's demo pages (archives by tag/category/year, portfolio, terms, `cv-json`) were deleted to keep the index to real content.
 - **Layout customisation hooks**: `_includes/head/custom.html` and `_includes/footer/custom.html` are the intended places for extra `<head>` scripts (e.g. MathJax) or footer content.
 
@@ -43,7 +43,7 @@ If `bundle install` fails for lack of `ruby-dev` (no sudo), the headers can be u
 `.github/workflows/jekyll-build.yml` is triggered by `workflow_run` of the "Cleanup bad PR" workflow on branch `main`, but this repo's branch is `master`, so it effectively never runs here; GitHub Pages' own build is what deploys the site. `bad-pr.yml` is upstream-template spam handling and irrelevant for this personal site.
 
 ## Règles pour ce site
-
+'
 - Site en anglais.
 - Ne pas modifier les fichiers du thème (_layouts, _includes, _sass) sauf demande explicite.
 - Vérifier que le site compile (bundle exec jekyll build) avant chaque commit.

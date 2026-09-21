@@ -15,7 +15,21 @@
               {% assign domain = base_path %}
             {% endif %}
             <li class="masthead__menu-item {% if page.url contains link.url and link.url != '/' %}selected{% endif %}">
-              <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+              <div class="masthead__menu-item-inner">
+                <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+                {% if link.children %}
+                  <ul class="masthead__submenu">
+                    {% for child in link.children %}
+                      {% if child.url contains 'http' %}
+                        {% assign child_domain = '' %}
+                      {% else %}
+                        {% assign child_domain = base_path %}
+                      {% endif %}
+                      <li><a href="{{ child_domain }}{{ child.url }}">{{ child.title }}</a></li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div>
             </li>
           {% endfor %}
         </ul>

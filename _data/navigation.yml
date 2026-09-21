@@ -13,6 +13,11 @@ main:
 
   - title: "CV"
     url: /files/Emile_Emery_CV_EN.pdf
+    children:
+      - title: "English"
+        url: /files/Emile_Emery_CV_EN.pdf
+      - title: "Français"
+        url: /files/Emile_Emery_CV_FR.pdf
 
   - title: "Publications"
     url: /publications/
