@@ -1,9 +1,9 @@
 ---
 layout: archive
-title: "Publications"
+title: "Publications & Code"
 permalink: /publications/
 author_profile: true
-description: "Peer-reviewed articles, manuscripts under revision and preprints by Emile Emery on power grids, spatial networks, ecological and social interactions."
+description: "Peer-reviewed articles, manuscripts under revision and preprints by Emile Emery on power grids, spatial networks, ecological and social interactions, with links to their code and data."
 ---
 
 <style>
@@ -33,8 +33,12 @@ description: "Peer-reviewed articles, manuscripts under revision and preprints b
       {% if paper.citation %}
     <p>Recommended citation: {{ paper.citation }}</p>
       {% endif %}
-      {% if paper.paperurl %}
-    <p><a href="{{ paper.paperurl }}">Download paper</a></p>
+      {% if paper.paperurl or paper.codeurl != blank %}
+    <p>
+        {%- if paper.paperurl %}<a href="{{ paper.paperurl }}">Download paper</a>{% endif -%}
+        {%- if paper.paperurl and paper.codeurl != blank %} | {% endif -%}
+        {%- if paper.codeurl != blank %}<a href="{{ paper.codeurl }}">Code</a>{% endif -%}
+    </p>
       {% endif %}
   </article>
 </div>

@@ -19,7 +19,7 @@ main:
       - title: "Français"
         url: /files/Emile_Emery_CV_FR.pdf
 
-  - title: "Publications"
+  - title: "Publications & Code"
     url: /publications/
 
   # Data & Code folded into Publications (a Code link per paper); page kept unpublished

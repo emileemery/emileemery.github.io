@@ -7,6 +7,6 @@ excerpt: 'A generative model for higher-order social interaction data, built fro
 date: 2026-01-01
 venue: 'Under revision at Physical Review E'
 paperurl: 'https://hal.science/hal-05487223'
-codeurl: ''   # Zenodo (or other repository) URL for the code and data
+codeurl: 'https://github.com/aminaazaiez/Higher-order-Friend-of-Friend-model'   # Zenodo (or other repository) URL for the code and data
 citation: 'Azaiez A., Emery É. (2026). &quot;Friend-of-friend generative models for social group interactions.&quot; Under revision at <i>Physical Review E</i>. hal-05487223.'
 ---
