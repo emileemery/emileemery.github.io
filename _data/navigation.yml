@@ -22,8 +22,9 @@ main:
   - title: "Publications"
     url: /publications/
 
-  - title: "Data & Code"
-    url: /data/
+  # Data & Code folded into Publications (a Code link per paper); page kept unpublished
+  # - title: "Data & Code"
+  #   url: /data/
 
   - title: "Teaching"
     url: /teaching/
